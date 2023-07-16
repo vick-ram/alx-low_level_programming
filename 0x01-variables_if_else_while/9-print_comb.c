@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
-  *main -main entry point
-  *Description: -prints numbers separated by a comma
-  *Return: -always return 0
-*/
+  *main - main entry point
+  *Description: - prints numbers separated by comma
+  *Return: - always returns 0
+  */
 int main(void)
 {
 	int n = 48;
@@ -13,7 +13,7 @@ int main(void)
 		putchar(n);
 		if (n != 57)
 		{
-		putchar(44);
+			putchar(44);
 		}
 		n++;
 	}
