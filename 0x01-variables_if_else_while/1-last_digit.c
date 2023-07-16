@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
 *main - main entry point
 *Description: prints the positive or negative of last digit
