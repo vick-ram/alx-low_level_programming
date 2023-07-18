@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <main.h>
+#include "main.h"
 /**
 *print_alphabet - prints alphabets
 *Description: - prints alphabets in lowercase
@@ -11,9 +10,9 @@ void print_alphabet(void)
 
 	while (n <= 122)
 	{
-		putchar(n);
+		_putchar(n);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
 /**
  *main - Entry point
