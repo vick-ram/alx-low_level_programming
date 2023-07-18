@@ -14,13 +14,3 @@ void print_alphabet(void)
 	}
 	_putchar('\n');
 }
-/**
- *main - Entry point
- *Description: - calls the function that prints alphabets
- *Return: - always return 0
- */
-int main(void)
-{
-	void print_alphabet(void);
-	return (0);
-}
