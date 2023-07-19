@@ -1,4 +1,4 @@
-i#include <stdio.h>
+#include <stdio.h>
 #include "main.h"
 /**
   *print_to_98 - prints numbers to 98 either way
