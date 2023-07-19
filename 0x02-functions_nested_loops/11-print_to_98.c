@@ -1,4 +1,4 @@
-#include <stdio.h>
+i#include <stdio.h>
 #include "main.h"
 /**
   *print_to_98 - prints numbers to 98 either way
@@ -24,7 +24,7 @@ void print_to_98(int n)
 			}
 		}
 	}
-	else
+	else if (n >= 98)
 	{
 		for (; n >= 98; n--)
 		{
@@ -40,5 +40,4 @@ void print_to_98(int n)
 			}
 		}
 	}
-	_putchar('\n');
 }
