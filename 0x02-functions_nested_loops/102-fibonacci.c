@@ -8,15 +8,20 @@ int main(void)
 {
 	int i;
 	int t1 = 1, t2 = 2;
-	long int next = t1 + t2;
 
-	printf("%d, %d,", t1, t2);
-	for (i = 3; i <= 50; i++)
+	while ( i < 50)
 	{
-		printf("%lu ,", next);
-		t1 = t2;
-		t2 = next;
-		next = t1 + t2;
+		if (i == 0)
+			printf("%ld", t1);
+		else if (i == 1)
+			printf(", %ld", t2);
+		else
+		{
+			t2 += t1;
+			t1 = t2 - t1;
+			printf(", %ld", t2);
+		}
+		++i;
 	}
 	printf("\n");
 	return (0);
