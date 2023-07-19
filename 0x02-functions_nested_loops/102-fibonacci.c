@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	int t1 = 1, t2 = 2;
+	long int t1 = 1, t2 = 2;
 
 	while ( i < 50)
 	{
