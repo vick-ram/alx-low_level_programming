@@ -6,20 +6,20 @@
   */
 int main(void)
 {
-	int i;
-	long int t1 = 1, t2 = 2;
+	int i = 0;
+	long int j = 1, k = 2;
 
-	while ( i < 50)
+	while (i < 50)
 	{
 		if (i == 0)
-			printf("%ld", t1);
+			printf("%ld", j);
 		else if (i == 1)
-			printf(", %ld", t2);
+			printf(", %ld", k);
 		else
 		{
-			t2 += t1;
-			t1 = t2 - t1;
-			printf(", %ld", t2);
+			k += j;
+			j = k - j;
+			printf(", %ld", k);
 		}
 		++i;
 	}
