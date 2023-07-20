@@ -51,9 +51,9 @@ long int largestPrimeFactor(int n)
   */
 int main(void)
 {
-	long int num = 612852475143;
-	long int largestPrime = (largestPrimeFactor(num));
+	unsigned long int num = 612852475143;
+	unsigned long int largestPrime = (largestPrimeFactor(num));
 
-	printf("%ld\n", largestPrime);
+	printf("%lu\n", largestPrime);
 	return (0);
 }
