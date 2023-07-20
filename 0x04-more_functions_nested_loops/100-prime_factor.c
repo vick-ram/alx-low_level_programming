@@ -27,7 +27,7 @@ int is_Prime(int n)
   *@n: - integer value
   *Return: returns maxPrime
   */
-long int largestPrimeFactor(long int n)
+int largestPrimeFactor(int n)
 {
 	int maxPrime;
 	int i;
@@ -54,6 +54,6 @@ int main(void)
 	long int num = 612852475143;
 	long int largestPrime = (largestPrimeFactor(num));
 
-	printf("%lld\n", largestPrime);
+	printf("%ld\n", largestPrime);
 	return (0);
 }
