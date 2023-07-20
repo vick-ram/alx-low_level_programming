@@ -1,59 +1,18 @@
 #include <stdio.h>
 #include "main.h"
 /**
-  *is_Prime - return 0 if prime, else return 1
-  *@n: integer
-  *Return: - that described
-  */
-int is_Prime(int n)
-{
-	int i;
-
-	if (n <= 1)
-	{
-		return (0);
-	}
-	for (i = 2; i * i <= n; i++)
-	{
-		if (n % i == 0)
-		{
-			return (0);
-		}
-	}
-	return (1);
-}
-/**
-  *largestPrimeFactor - returns maxFactor
-  *@n: - integer value
-  *Return: returns maxPrime
-  */
-unsigned long int largestPrimeFactor(int n)
-{
-	unsigned long int maxPrime;
-	int i;
-
-	for (i = 2; i <= n; i++)
-	{
-		if (is_Prime(i) && n % i == 0)
-		{
-			maxPrime = i;
-			while (n % i == 0)
-			{
-				n /= i;
-			}
-		}
-	}
-	return (maxPrime);
-}
-/**
   *main - Entry point
   *Return: always return 0 (success)
   */
 int main(void)
 {
-	unsigned long int num = 612852475143;
-	unsigned long int largestPrime = (largestPrimeFactor(num));
+	unsigned long int i, num = 612852475143;
 
-	printf("%lu\n", largestPrime);
+	for (i = 3; i < 782849; i = i + 2)
+	{
+		while ((n % i == 0) && (n != i))
+			n /= i;
+	}
+	printf("%lu\n", n);
 	return (0);
 }
