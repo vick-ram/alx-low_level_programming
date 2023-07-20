@@ -27,7 +27,7 @@ int is_Prime(int n)
   *@n: - integer value
   *Return: returns maxPrime
   */
-int largestPrimeFactor(long long int n)
+long long int largestPrimeFactor(long long int n)
 {
 	int maxPrime;
 	int i;
