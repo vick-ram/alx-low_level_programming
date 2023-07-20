@@ -11,7 +11,7 @@ int main(void)
 	for (i = 3; i < 782849; i = i + 2)
 	{
 		while ((num % i == 0) && (num != i))
-			num /= num;
+			num /= i;
 	}
 	printf("%lu\n", num);
 	return (0);
