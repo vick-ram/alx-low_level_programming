@@ -10,9 +10,9 @@ int main(void)
 
 	for (i = 3; i < 782849; i = i + 2)
 	{
-		while ((n % i == 0) && (n != i))
-			n /= i;
+		while ((num % i == 0) && (num != i))
+			num /= num;
 	}
-	printf("%lu\n", n);
+	printf("%lu\n", num);
 	return (0);
 }
