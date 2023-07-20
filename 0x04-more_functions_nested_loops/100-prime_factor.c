@@ -5,23 +5,32 @@
   *@n: integer
   *Return: - that described
   */
-int is_Prime(int n)
+int is_Prime(long long int n)
 {
+	long long int i;
+
 	if (n <= 1)
 	{
 		return (0);
 	}
+	for (i = 2; i * i <= n; i++)
+	{
+		if (n % i == 0)
+		{
+			return (0);
+		}
+	}
 	return (1);
 }
 /**
-  *main - Entry point
-  *Return: always return 0 (success)
+  *largestPrimeFactor - returns maxFactor
+  *@n: - integer value
+  *Return: returns maxPrime
   */
-int main(void)
+long long int largestPrimeFactor(long long int n)
 {
-	int i;
-	long int n = 612852475143;
-	int maxPrime = 1;
+	long long int maxPrime;
+	long long int i;
 
 	for (i = 2; i <= n; i++)
 	{
@@ -34,6 +43,17 @@ int main(void)
 			}
 		}
 	}
-	printf("%d", maxPrime);
+	return (maxPrime);
+}
+/**
+  *main - Entry point
+  *Return: always return 0 (success)
+  */
+int main(void)
+{
+	long long int num = 612852475143;
+	long long int largestPrime = (largestPrimeFactor(num));
+
+	printf("%lld\n", largestPrime);
 	return (0);
 }
