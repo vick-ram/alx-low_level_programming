@@ -11,7 +11,7 @@ void print_array(int *a, int n)
 	int i, num, index = 0;
 	char buffer[12];
 
-	if (a == (int *)-1 || n <= 0)
+	if (a == (int *)-1 || n == -1)
 		return;
 	if (n == 0)
 		putchar('\n');
