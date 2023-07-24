@@ -3,17 +3,26 @@
   *puts2 - print any other character starting from 0
   *@str: - char type
   *Return: - returns nothing
-  */
+ */
 void puts2(char *str)
 {
-	if (str == 0)
+	int len = 0;
+	int i = 0;
+	char *y = str;
+	int j;
+
+	while (*y != '\0')
 	{
-		return;
+		y++;
+		len++;
 	}
-	while (*str != '\0')
+	i = len - 1;
+	for (j = 0; j <= i; j++)
 	{
-		_putchar(*str);
-		str += 2;
+		if (j % 2 == 0)
+		{
+			_putchar(str[j]);
+		}
 	}
 	_putchar('\n');
 }
