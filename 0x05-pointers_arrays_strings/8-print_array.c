@@ -8,15 +8,11 @@
   */
 void print_array(int *a, int n)
 {
-	int i;
-	int num;
-	int index = 0;
+	int i, num, index = 0;
 	char buffer[12];
 
 	if (a == (int *)-1 || n <= 0)
-	{
 		return;
-	}
 	for (i = 0; i < n; i++)
 	{
 		num = a[i];
@@ -26,9 +22,7 @@ void print_array(int *a, int n)
 			num = -num;
 		}
 		if (num == 0)
-		{
 			putchar('0');
-		}
 		else
 		{
 			while (num > 0)
@@ -37,12 +31,13 @@ void print_array(int *a, int n)
 				num /= 10;
 			}
 			while (index > 0)
-			{
 				putchar(buffer[--index]);
-			}
 		}
-		putchar(',');
-		putchar(' ');
+		if (i < n - 1)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
 }
