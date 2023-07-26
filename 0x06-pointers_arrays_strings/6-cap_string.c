@@ -24,7 +24,7 @@ char *cap_string(char *ch)
 		{
 			if (i == 0 || !isDigit(ch[i - 1]))
 			{
-				ch[i] = ch[i] -('a' - 'A');
+				ch[i] = ch[i] - ('a' - 'A');
 			}
 			capitalizeNext = 0;
 		}
