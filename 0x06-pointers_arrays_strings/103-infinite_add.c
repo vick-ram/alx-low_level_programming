@@ -1,12 +1,25 @@
 #include "main.h"
 /**
-  *isValidDigit - determines if the digit is valid
-  *@c: - char type param
-  *Return: - returns true
+  *reverseString - reverses string
+  *@n: - char type param
+  *Return: - returns 0
   */
-int isValidDigit(char c)
+void reverseString(char *n)
 {
-	return (c >= '0' && c <= '9');
+	int i = 0, j = 0;
+	char temp;
+
+	while (*(n + i) != '\0')
+	{
+		i++;
+	}
+	i--;
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
+	}
 }
 /**
   *infinite_add - adds two numbers and returns result
@@ -18,30 +31,42 @@ int isValidDigit(char c)
   */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int sum, numDigits = 1, tempSum, i;
+	int overflow = 0, i = 0, j = 0, digits = 0;
+	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	if (*n1 != '\0' && *n2 != '\0' && isValidDigit(*n1) && isValidDigit(*n2))
-	{
-		sum = (*n1 - '0') + (*n2 + '0');
-		tempSum = sum;
-		while (tempSum >= 10)
-		{
-			numDigits++;
-			tempSum /= 10;
-		}
-		if (numDigits + 1 <= size_r)
-		{
-			for (i = numDigits - 1; i >= 0; i--)
-			{
-				r[i] = '0' + (sum % 10);
-				sum /= 10;
-			}
-			r[numDigits] = '\0';
-			return (r);
-		}
-		else
-			return (0);
-	}
-	else
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
+	while (j >= 0 || i >= 0 || overflow == 1)
+	{
+		if (i < 0)
+			val1 = 0;
+		else
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
+			val2 = 0;
+		else
+			val2 = *(n2 + j) - '0';
+		temp_tot = val1 + val2 + overflow;
+		if (temp_tot >= 10)
+			overflow = 1;
+		else
+			overflow = 0;
+		if (digits >= (size_r - 1))
+			return (0);
+		*(r + digits) = (temp_tot % 10) + '0';
+		digits++;
+		j--;
+		i--;
+	}
+	if (digits == size_r)
+		return (0);
+	*(r + digits) = '\0';
+	reverseString(r);
+	return (r);
 }
