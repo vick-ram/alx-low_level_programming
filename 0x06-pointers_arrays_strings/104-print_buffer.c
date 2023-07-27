@@ -16,7 +16,7 @@ void print_buffer(char *b, int size)
 		printf("\n");
 	for (i = 0; i < size; i += 10)
 	{
-		printf("%08x ", i);
+		printf("%08x: ", i);
 		for (j = 0; j < 10; j += 2)
 		{
 			if (i + j < size)
@@ -27,10 +27,10 @@ void print_buffer(char *b, int size)
 					printf("%02x ", (unsigned char)b[i + j + 1]);
 				}
 				else
-					printf("   ");
+					printf("    ");
 			}
 			else
-				printf("    ");
+				printf("     ");
 		}
 		printf(" ");
 		for (j = 0; j < 10; j++)
