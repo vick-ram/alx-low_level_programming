@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  *_memset fills the buffer n with type char b pointed by pointer *s
+  *_memset - fills the buffer n with type char b pointed by pointer *s
   *@s: - char type pointer
   *@b: - char type values
   *@n: - integer type buffer
