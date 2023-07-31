@@ -7,11 +7,5 @@
   */
 void set_string(char **s, char *to)
 {
-	int len = 0;
-
-	while (to[len] != '\0')
-	{
-		len++;
-	}
 	*s = to;
 }
