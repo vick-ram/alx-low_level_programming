@@ -2,6 +2,7 @@
 /**
   *_puts - prints a string
   *@str: - char type
+  *
   *Return: - returns nothing
   */
 void _puts(char *str)
