@@ -9,15 +9,19 @@
 int main(int argc, char *argv[])
 {
 	int product;
-	int m = atoi(argv[1]);
-	int n = atoi(argv[2]);
+	int m, n;
 
-	if (argc < 3)
+	if (argc == 3)
+	{
+		m = atoi(argv[1]);
+		n = atoi(argv[2]);
+		product = n * m;
+		printf("%d\n", product);
+	}
+	else
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
-	product = m * n;
-	printf("%d\n", product);
 	return (0);
 }
