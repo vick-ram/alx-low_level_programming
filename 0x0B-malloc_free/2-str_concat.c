@@ -8,8 +8,9 @@
   */
 char *str_concat(char *s1, char *s2)
 {
-	int len1 = 0, len2 = 0, i, j;
+	int len1 = 0, len2 = 0;
 	char *mem;
+	char s3[30];
 
 	if (s1 == NULL)
 		s1 = "";
@@ -22,14 +23,18 @@ char *str_concat(char *s1, char *s2)
 	mem = (char *)malloc(len1 + len2 + 1);
 	if (mem == NULL)
 		return (NULL);
-	for (i = 0; i < len1; i++)
+	while (*s1 != '\0')
 	{
-		mem[i] = s1[i];
+		*s3 = *s1;
+		s1++;
 	}
-	for (j = 0; i <= len2; j++)
+	while (*s2 != '\0')
 	{
-		mem[i + j] = s2[j];
+		*s3 = *s2;
+		s1++;
+		s2++;
 	}
-	mem[len1 + len2] = '\0';
+	*s3 = '\0';
+	*mem = *s3;
 	return (mem);
 }
