@@ -4,6 +4,7 @@
   *string_nconcat - concatenates two strings and saves in memory
   *@s1: - char type param
   *@s2: - char type param
+  *@n: - int type param
   *Return: - returns pointer to concatenated string momory
   *returns NULL if fails, 
   */
