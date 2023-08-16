@@ -1,5 +1,6 @@
 #include "function_pointers.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
   *print_name - prints a name
   *@name: - char type param
@@ -8,5 +9,6 @@
   */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (f != NULL)
+		f(name);
 }
