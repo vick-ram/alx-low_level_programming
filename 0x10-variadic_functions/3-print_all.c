@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 /**
   *print_all - prints all types
   *@format: - char type
@@ -9,12 +8,10 @@
   */
 void print_all(const char * const format, ...)
 {
-	int n, index = 0;
-	char c;
+	int i, index = 0;
+	char c, *s;
 	float f;
-	char *s;
 	va_list arg;
-	char sep = ',';
 
 	va_start(arg, format);
 	while (format && format[index] != '\0')
@@ -22,17 +19,17 @@ void print_all(const char * const format, ...)
 		if (format[index] == 'c')
 		{
 			c = va_arg(arg, int);
-			printf("%c", c);
+			printf("%c, ", c);
 		}
-		else if (format[index] == 'd')
+			else if (format[index] == 'i')
 		{
-			n = va_arg(arg, int);
-			printf("%d", n);
+			i = va_arg(arg, int);
+			printf("%d, ", i);
 		}
 		else if (format[index] == 'f')
 		{
 			f = va_arg(arg, double);
-			printf("%f", f);
+			printf("%f, ", f);
 		}
 		else if (format[index] == 's')
 		{
@@ -40,10 +37,8 @@ void print_all(const char * const format, ...)
 			if (s == NULL)
 				printf("(nil)");
 			else
-				printf("%s", s);
+				printf("%s, ", s);
 		}
-		if (format[index + 1])
-			printf("%c ", sep);
 		index++;
 	}
 	va_end(arg);
