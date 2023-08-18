@@ -14,31 +14,35 @@ void print_all(const char * const format, ...)
 	va_list arg;
 
 	va_start(arg, format);
-	while (format && format[index] != '\0')
+	while (format[index] != '\0')
 	{
-		if (format[index] == 'c')
+		switch(format[index])
 		{
-			c = va_arg(arg, int);
-			printf("%c, ", c);
+			case 'c':
+				c = (char)va_arg(arg, int);
+				printf("%c", c);
+				break;
+			case 'i':
+				i = va_arg(arg, int);
+				printf("%d", i);
+				break;
+			case 'f':
+				f = (float)va_arg(arg, double);
+				printf("%f", f);
+				break;
+			case 's':
+				s = va_arg(arg, char *);
+				if (s == NULL)
+					printf("(nil)");
+				else
+					printf("%s", s);
+				break;
+			default:
+				index++;
+				continue;
 		}
-			else if (format[index] == 'i')
-		{
-			i = va_arg(arg, int);
-			printf("%d, ", i);
-		}
-		else if (format[index] == 'f')
-		{
-			f = va_arg(arg, double);
-			printf("%f, ", f);
-		}
-		else if (format[index] == 's')
-		{
-			s = va_arg(arg, char *);
-			if (s == NULL)
-				printf("(nil)");
-			else
-				printf("%s, ", s);
-		}
+		if (format[index + 1] != '\0')
+			printf(", ");
 		index++;
 	}
 	va_end(arg);
