@@ -6,22 +6,17 @@
   */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *curr = *h, *temp = *NULL, *mem = NULL;
+	listint_t *curr = *h, *next;
 	size_t count = 0;
 
 	while (curr != NULL)
 	{
 		count++;
-		temp = curr->next;
-		if (curr >= mem)
-		{
-			if (mem == NULL)
-				mem = curr;
-			else
-				break;
-		}
+		next = curr->next;
 		free(curr);
-		curr = temp;
+		if (next <= curr)
+			break;
+		curr = next;
 	}
 	*h = NULL;
 	return (count);
