@@ -6,44 +6,23 @@
   */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *temp = *h, *ptr = *h, *mem;
-	size_t count = 1, size = 0, i;
+	listint_t *curr = *h, *temp = *NULL, *mem = NULL;
+	size_t count = 0;
 
-	while (ptr != NULL && ptr->next != NULL)
+	while (curr != NULL)
 	{
-		ptr = ptr->next->next;
-		temp = temp->next;
-		if (ptr == temp)
+		count++;
+		temp = curr->next;
+		if (curr >= mem)
 		{
-			ptr = ptr->next;
-			while (ptr != temp)
-			{
-				ptr = ptr->next;
-				count++;
-			}
-			ptr = *h;
-			for (i = 0; i < count; i++)
-			{
-				temp = ptr;
-				ptr = ptr->next;
-			}
-			while (ptr != temp)
-			{
-				temp = ptr;
-				ptr = ptr->next;
-				free(temp);
-				size++;
-			}
-			*h = NULL;
-			return (size);
+			if (mem == NULL)
+				mem = curr;
+			else
+				break;
 		}
+		free(curr);
+		curr = temp;
 	}
-	while (*h != NULL)
-	{
-		mem = *h;
-		*h = (*h)->next;
-		free(mem);
-		size++;
-	}
-	return (size);
+	*h = NULL;
+	return (count);
 }
