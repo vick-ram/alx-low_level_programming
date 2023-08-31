@@ -6,24 +6,7 @@
   */
 void print_binary(unsigned long int n)
 {
-	int count, leading_zero = 1, i;
-	unsigned long int mask;
-
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	count = sizeof(unsigned long int) * 8;
-	for (i = count - 1; i >= 0; i--)
-	{
-		mask = 1UL << i;
-		if ((n & mask) != 0)
-		{
-			_putchar('1');
-			leading_zero = 0;
-		}
-		else if (!leading_zero)
-			_putchar('0');
-	}
+	if (n > 1)
+		print_binary(n >> 1);
+	_putchar((n & 1) + '0');
 }
