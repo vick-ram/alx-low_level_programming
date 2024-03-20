@@ -9,6 +9,6 @@ all: ${OBJ}
 clean:
 	${RM} *~ ${NAME}
 oclean:
-	${rm} ${obj}
+	${RM} ${OBJ}
 fclean: clean oclean
 re: fclean all
